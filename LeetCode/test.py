@@ -19,4 +19,4 @@ Created on Sun Sep 10 14:34:00 2017
 #print(s[:2])
 
 a = [[1,2],[3,4]]
-print([i for i in (for m in a)])
+print()
