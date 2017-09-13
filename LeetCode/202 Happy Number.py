@@ -14,10 +14,13 @@ class Solution(object):
         if n**2 == 1:
             return True
         else:
-            temp = 0
-            while(n != 0):
-                temp += (n%10)**2
-                n //= 10
-            return self.isHappy(temp)
+            try:
+                temp = 0
+                while(n != 0):
+                    temp += (n%10)**2
+                    n //= 10
+                return self.isHappy(temp)
+            except:
+                return False
 test = Solution()
-print(test.isHappy(2))
+print(test.isHappy(29))
