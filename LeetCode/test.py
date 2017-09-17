@@ -18,5 +18,9 @@ Created on Sun Sep 10 14:34:00 2017
 #s = "word"
 #print(s[:2])
 
-a = [[1,2],[3,4]]
-print()
+#a = [[1,2],[3,4]]
+#print()
+#a = 'a'
+#print(a)
+for i in 'AA':
+    print (i)
