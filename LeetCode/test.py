@@ -25,12 +25,11 @@ Created on Sun Sep 10 14:34:00 2017
 #for i in 'AA':
 #    print (i)
 #print(len('ss'))
-dic = {'a':1, 'b':2, 'c':2}
-for i,j in enumerate(dic):
-    if dic[j] == 1:
-        print(j)
-
-
+#dic = {'a':1, 'b':2, 'c':2}
+#for i,j in enumerate(dic):
+#    if dic[j] == 1:
+#        print(j)
+print(int('-10'))
 
 
 
