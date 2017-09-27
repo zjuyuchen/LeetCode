@@ -4,6 +4,10 @@ Created on Thu Sep 28 00:58:26 2017
 
 @author: Administrator
 """
+#get all distance between two points -> disMatrix
+#for every column or row of the disMatrix
+#push the same distance d to the dictionary
+#the number of (i, j, k) is dic[d]*(dic[d]-1) for d
 
 class Solution(object):
     def numberOfBoomerangs(self, points):
