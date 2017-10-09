@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Sep 27 23:59:28 2017
+Created on Sat Sep 30 01:13:25 2017
 
 @author: Administrator
 """
+
 #Thanks StefanPochmann, origin from his idea.
 #Go through all the possible time.
 class Solution(object):
