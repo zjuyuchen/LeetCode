@@ -12,25 +12,22 @@ class Solution(object):
         :type magazine: str
         :rtype: bool
         """
-        def contain(a,word):
-            l1 = len(a)
-            l2 = len(word)
-            bol = False
-            l = 0 
-            while(l<=l2-l1):
-                c = word[l:l+l1]
-                if a == c:
-                    bol = True
-                    break
-                else:
-                    l += 1
-            return bol
-        a = ransomNote.split(" ")
-        b = magazine.split(" ")
-        for i in a:
-            for j in b:
-                if not contain(i,j):
-                    return False
+        dicr = {}
+        for i in ransomNote:
+            if i in dicr:
+                dicr[i] += 1
+            else:
+                dicr[i] = 1
+        dicm = {}
+        for j in magazine:
+            if j in dicm:
+                dicm[j] += 1
+            else:
+                dicm[j] = 1
+        for d in dicr:
+            if d not in dicm or dicr[d]>dicm[d]:
+                return False
         return True
-test = Solution()
-print(test.canConstruct("aa cc","aa cc"))
+#                
+#test =  Solution()
+#print(test.canConstruct('aa','aab'))
