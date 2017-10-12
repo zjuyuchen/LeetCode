@@ -11,7 +11,10 @@
 #c = [1,1,1,0]
 #print(a,b)
 #print(all(a),all(b), all(c))
-#print(any(a),any(b), any(c))
-a  = 'abcd'
-b = 'abcd'
-print(a*2)
+##print(any(a),any(b), any(c))
+#a  = 'abcd'
+#b = 'abcd'
+#print(a*2)
+dic = {'a':2}
+dic.pop('a')
+print(dic)
