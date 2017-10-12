@@ -36,17 +36,12 @@ class Solution(object):
         i= 0
         j = 0
         while(i<=j<len(s)):
-            if j == len(s) - 1:
-                if s[j] not in s[i:j]:
-                    return max(res, len(s[i:j+1]))
-                else:
-                    return max(res, len(s[i:j]))
             if s[j] not in s[i:j]:
                 j += 1
             else:
                 res = max(res, len(s[i:j]))
                 i += 1
-        return res
+        return max(res, len(s[i:j]))
 
 #test = Solution()
 #print(test.lengthOfLongestSubstring('abcabcd'))
