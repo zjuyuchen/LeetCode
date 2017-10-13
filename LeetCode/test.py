@@ -15,6 +15,8 @@
 #a  = 'abcd'
 #b = 'abcd'
 #print(a*2)
-dic = {'a':2}
-dic.pop('a')
-print(dic)
+#dic = {'a':2}
+#dic.pop('a')
+#print(dic)
+a = [1,2,3]
+print(a[:2])
