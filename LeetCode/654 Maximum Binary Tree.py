@@ -35,4 +35,4 @@ class Solution(object):
             return root
         return construct(nums)
 #test = Solution()
-#print(test.constructMaximumBinaryTree([3,2,1,6,0,4]).right.left.val)
+#root = test.constructMaximumBinaryTree([3,2,1,6,0,4])
