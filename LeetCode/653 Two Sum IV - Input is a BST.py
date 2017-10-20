@@ -19,18 +19,18 @@ class Solution(object):
         :type k: int
         :rtype: bool
         """
-        dic = []
+        self.f = False
+        dic = {}
         def InOrderWalk(node, k):
             if node:
-                a = InOrderWalk(node.left)
+                InOrderWalk(node.left, k)
                 if node.val in dic: 
-                    return True
+                    self.f = True
                 else:
-                    dic.append(k-node.val)
-                b = InOrderWalk(node.right)
-                if a or b:
-                    return True
-        return InOrderWalk(root, k)
+                    dic[k - node.val] = 1
+                InOrderWalk(node.right, k)
+        InOrderWalk(root, k)
+        return self.f
 root = TreeNode(2)
 root.left = TreeNode(1)
 root.right = TreeNode(3)
