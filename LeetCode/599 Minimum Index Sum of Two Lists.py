@@ -12,8 +12,16 @@ class Solution(object):
         :type list2: List[str]
         :rtype: List[str]
         """
+        dic = {}
+        res = len(list1) + len(list2)
+        s = []
         for i,l in enumerate(list1):
-            if l in list2:
-                print(index(l))
-test = Solution()
-print(test.findRestaurant(['a','b'],['a','c']))
+            dic[l] = i
+        for i,l in enumerate(list2):
+            if l in dic:
+                res = min(res, i+dic[l])
+        for i,l in enumerate(list2):
+            if l in dic:
+                if res == i+dic[l]:
+                    s.append(l)
+        return s
