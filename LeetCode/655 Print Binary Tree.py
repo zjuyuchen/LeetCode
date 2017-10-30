@@ -1,27 +1,39 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Oct 20 23:36:23 2017
+Created on Mon Oct 30 16:54:40 2017
 
-@author: yc
+@author: Demo
 """
+#对于树来说，能用递归就用递归。
 
-# This problem takes me 2 hours, finally I give it up..
-#Thanks lee215
 
-def printTree(self, root):
-        if not root: return [""]
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
-        def depth(root):
-            if not root: return 0
-            return max(depth(root.left), depth(root.right)) + 1
-
+class Solution(object):
+    def printTree(self, root):
+        if not root:
+            return ['']
+        """
+        :type root: TreeNode
+        :rtype: List[List[str]]
+        """
+        def depth(node):
+            if not node:
+                return 0
+            return max(depth(node.left), depth(node.right)) + 1
         d = depth(root)
-        self.res = [[""] * (2**d - 1) for _ in xrange(d)]
-
-        def helper(node, d, pos):
-            self.res[-d - 1][pos] = str(node.val)
-            if node.left: helper(node.left, d - 1, pos - 2**(d - 1))
-            if node.right: helper(node.right, d - 1, pos + 2**(d - 1))
-
-        helper(root, d - 1, 2**(d - 1) - 1)
-        return self.res
+        res = [['']*(2**d-1) for i in range(d)]
+        def prints(node, d, pos):
+            res[-d][pos] = str(node.val)
+            if node.left:
+                prints(node.left, d - 1, pos - 2**(d-2))
+            if node.right:
+                prints(node.right, d - 1, pos + 2**(d-2))
+        prints(root, d, 2**(d-1)-1)
+        return res
+                
